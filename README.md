@@ -264,7 +264,7 @@ USDC Token Contract → Stablecoin goodness
 
 ```bash
 # 1. Grab the code
-git clone https://github.com/yourusername/fliq
+git clone https://github.com/somehowliving/fliq
 cd fliq
 
 # 2. Set up Cairo tools
