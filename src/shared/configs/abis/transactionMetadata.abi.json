@@ -1,0 +1,152 @@
+[
+  {
+    "type": "impl",
+    "name": "TransactionMetadataImpl",
+    "interface_name": "fliq_contracts::ITransactionMetadata"
+  },
+  {
+    "type": "enum",
+    "name": "core::bool",
+    "variants": [
+      {
+        "name": "False",
+        "type": "()"
+      },
+      {
+        "name": "True",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "type": "struct",
+    "name": "fliq_contracts::TxMetadata",
+    "members": [
+      {
+        "name": "sender",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "message",
+        "type": "core::felt252"
+      },
+      {
+        "name": "is_public",
+        "type": "core::bool"
+      },
+      {
+        "name": "timestamp",
+        "type": "core::integer::u64"
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "fliq_contracts::ITransactionMetadata",
+    "items": [
+      {
+        "type": "function",
+        "name": "add_metadata",
+        "inputs": [
+          {
+            "name": "tx_hash",
+            "type": "core::felt252"
+          },
+          {
+            "name": "receiver",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "message",
+            "type": "core::felt252"
+          },
+          {
+            "name": "is_public",
+            "type": "core::bool"
+          },
+          {
+            "name": "timestamp",
+            "type": "core::integer::u64"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "type": "function",
+        "name": "get_metadata",
+        "inputs": [
+          {
+            "name": "tx_hash",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "fliq_contracts::TxMetadata"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "is_public",
+        "inputs": [
+          {
+            "name": "tx_hash",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "core::bool"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "type": "constructor",
+    "name": "constructor",
+    "inputs": []
+  },
+  {
+    "type": "event",
+    "name": "fliq_contracts::TransactionMetadata::MetadataAdded",
+    "kind": "struct",
+    "members": [
+      {
+        "name": "tx_hash",
+        "type": "core::felt252",
+        "kind": "data"
+      },
+      {
+        "name": "sender",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      },
+      {
+        "name": "receiver",
+        "type": "core::starknet::contract_address::ContractAddress",
+        "kind": "data"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "fliq_contracts::TransactionMetadata::Event",
+    "kind": "enum",
+    "variants": [
+      {
+        "name": "MetadataAdded",
+        "type": "fliq_contracts::TransactionMetadata::MetadataAdded",
+        "kind": "nested"
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+port: 3300
+database:
+  mongo:
+    url: "mongodb://localhost:27017/fliq"
+jsonLimit: "2mb"
